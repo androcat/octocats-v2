@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+}
+
+.octodex {
+  border: solid 10px blue;
+
+  list-style-type: none;
+  padding: 0;
+}
+
+.octocat {
+  border: solid 5px red;
+
+  width: 30%;
+  display: inline-block;
+
+  margin-left: 2.5%;
+}
+/* Not necessary vvv */
+/* .octocat:first-of-type {
+  margin-left: 0.1%;
+}
+
+.octocat:last-of-type {
+  margin-right: 0;
+} */
+
+.image-footer span,
+div {
+  display: inline-block;
+}
+
+.authors img {
+  height: 5vh;
+}

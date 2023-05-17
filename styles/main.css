@@ -22,6 +22,7 @@ html {
   display: inline-block;
 
   margin-left: 2.5%;
+  text-align: center;
 }
 /* Not necessary vvv */
 /* .octocat:first-of-type {
@@ -32,6 +33,12 @@ html {
   margin-right: 0;
 } */
 
+.octocat > img {
+  border: solid 5px green;
+
+  margin: 0 auto;
+}
+
 .image-footer span,
 div {
   display: inline-block;
@@ -40,3 +47,5 @@ div {
 .authors img {
   height: 5vh;
 }
+
+/* Mady's solution */

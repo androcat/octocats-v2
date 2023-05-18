@@ -98,10 +98,9 @@ ul {
 .octocat:first-child {
   margin-left: 0;
 }
-/* trying to grab 4, 7, 10 */
+/* trying to grab 4, 7, 10... */
 .octocat:nth-child(3n + 4) {
   margin-left: 0;
-  border: red 1px solid;
 }
 
 /* only grabs first anchor tag */
@@ -112,6 +111,8 @@ ul {
   width: 100%;
   border: solid 1px var(--primary-gray);
   border-radius: 5px;
+
+  /* text-decoration: none; */
 
   /* for the triangle positioning */
   position: relative;

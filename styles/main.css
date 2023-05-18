@@ -98,6 +98,11 @@ ul {
 .octocat:first-child {
   margin-left: 0;
 }
+/* trying to grab 4, 7, 10 */
+.octocat:nth-child(3n + 4) {
+  margin-left: 0;
+  border: red 1px solid;
+}
 
 /* only grabs first anchor tag */
 .octocat > a {
@@ -136,6 +141,7 @@ ul {
   border-bottom: solid 1px var(--primary-gray);
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 15px;
 
   position: relative;
 }

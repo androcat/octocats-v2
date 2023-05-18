@@ -8,7 +8,8 @@ html {
   box-sizing: inherit;
 }
 
-.octodex {
+/* original code */
+/* .octodex {
   border: solid 10px blue;
 
   list-style-type: none;
@@ -32,7 +33,7 @@ html {
 .octocat:last-of-type {
   margin-right: 0;
 } */
-
+/*
 .octocat > img {
   border: solid 5px green;
 
@@ -46,6 +47,128 @@ div {
 
 .authors img {
   height: 5vh;
+} */
+
+/* Updated Code with comments */
+/* Can have calc in css
+    - try to use once */
+:root {
+  /* Why won't the font match that of teh original octodex ? */
+  --primary-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --primary-gray: #cacaca;
 }
 
-/* Mady's solution */
+/* ////////////////////////// DEFAULTS */
+/* html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+} */
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* //////////////////////// END DEFAULTS */
+.octodex {
+  /* to center the now horizontal list and octocat elements */
+  text-align: center;
+}
+/* //////////////////// OCTOCATS */
+.octocat {
+  /* using inline-block so the octocats can sit next to eachother */
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+
+  /* added by author (self) for proper spacing between octocats*/
+  margin-left: 2.5%;
+}
+
+/* added by me author (self) for proper spacing between octocats*/
+.octocat:first-child {
+  margin-left: 0;
+}
+
+/* only grabs first anchor tag */
+.octocat > a {
+  display: inline-block;
+  /* so that it fills up entirety of parent */
+  height: 100%;
+  width: 100%;
+  border: solid 1px var(--primary-gray);
+  border-radius: 5px;
+
+  /* for the triangle positioning */
+  position: relative;
+}
+
+.octocat > a::after {
+  /* NOTE: HAVE TO HAVE CONTENT for this pseudo element to appear 
+      - also this adds after the very last child
+      - don't want to add an element just to do something like add a border */
+  /* this gives us a height and width of 0 x 0
+      so everything goes down to a point */
+  content: "";
+  border-top: solid 10px var(--primary-gray);
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+
+  position: absolute;
+  top: 100%;
+  right: 1%;
+}
+
+.image-number::before {
+  content: "#";
+}
+
+.image-footer {
+  border-bottom: solid 1px var(--primary-gray);
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  position: relative;
+}
+
+.image-number {
+  position: absolute;
+  /* ask why use top and transform */
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.authors {
+  display: inline-block;
+}
+
+/* to target author imgs which live within an anchor tag*/
+.authors > li > a {
+  display: inline-block;
+  width: 30px;
+}
+
+/* doesn't affect the num because that was taken out of flow and positioned */
+.image-caption {
+  text-align: right;
+}
+/* any a tag within the image cap that is the 2nd child */
+.image-caption a:nth-child(2) {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+/* caution with this bc not all elements can be vertical-align */
+.authors img {
+  vertical-align: middle;
+}
